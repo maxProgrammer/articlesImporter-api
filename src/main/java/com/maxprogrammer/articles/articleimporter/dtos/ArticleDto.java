@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 
-public class ArtigosDto {
+public class ArticleDto {
 
     public int page;
 
@@ -17,13 +17,13 @@ public class ArtigosDto {
     @JsonProperty("total_pages")
     public int totalPages;
 
-    public ArrayList<DetalheArtigoDto> data;
+    public ArrayList<ArticleDetailDto> data;
 
     @Deprecated
-    public ArtigosDto() {
+    public ArticleDto() {
     }
 
-    public ArtigosDto(int page, int perPage, int total, int totalPages, ArrayList<DetalheArtigoDto> data) {
+    public ArticleDto(int page, int perPage, int total, int totlalPages, ArrayList<ArticleDetailDto> data) {
         this.page = page;
         this.perPage = perPage;
         this.total = total;

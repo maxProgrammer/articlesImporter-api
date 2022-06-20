@@ -9,18 +9,19 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class ArtigoModel {
+public class ArticleModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    public String title;
+
+    private String title;
     public String author;
 
-    public ArtigoModel() {
+    public ArticleModel() {
     }
 
-    public ArtigoModel(String title, String author) {
+    public ArticleModel(String title, String author) {
         this.title = title;
         this.author = author;
     }

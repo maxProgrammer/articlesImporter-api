@@ -2,9 +2,11 @@ package com.maxprogrammer.articles.articleimporter.dtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.maxprogrammer.articles.articleimporter.models.ArtigoModel;
+import com.maxprogrammer.articles.articleimporter.models.ArticleModel;
+import lombok.Data;
 
-public class DetalheArtigoDto {
+@Data
+public class ArticleDetailDto {
 
     public String title;
     public String url;
@@ -33,10 +35,10 @@ public class DetalheArtigoDto {
     public int createdAt;
 
     @Deprecated
-    public DetalheArtigoDto() {
+    public ArticleDetailDto() {
     }
 
-    public DetalheArtigoDto(String title, String url, String author, int numComments, int storyId, String storyTitle, String storyUrl, int parentId, int createdAt) {
+    public ArticleDetailDto(String title, String url, String author, int numComments, int storyId, String storyTitle, String storyUrl, int parentId, int createdAt) {
         this.title = title;
         this.url = url;
         this.author = author;
@@ -48,7 +50,12 @@ public class DetalheArtigoDto {
         this.createdAt = createdAt;
     }
 
-    public ArtigoModel novoArtigo() {
-        return new ArtigoModel(title, author);
+    public ArticleModel newArticleModelByTitle() {
+
+        return new ArticleModel(title, author);
+    }
+
+    public ArticleModel newArticleModelByStoryTitle(){
+        return new ArticleModel(storyTitle,author);
     }
 }
