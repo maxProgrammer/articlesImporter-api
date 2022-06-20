@@ -2,6 +2,7 @@ package com.maxprogrammer.articles.articleimporter.dtos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.maxprogrammer.articles.articleimporter.models.ArtigoModel;
 
 public class DetalheArtigoDto {
 
@@ -45,5 +46,9 @@ public class DetalheArtigoDto {
         this.storyUrl = storyUrl;
         this.parentId = parentId;
         this.createdAt = createdAt;
+    }
+
+    public ArtigoModel novoArtigo() {
+        return new ArtigoModel(title, author);
     }
 }

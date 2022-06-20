@@ -17,6 +17,9 @@ public class ArtigoModel {
     public String title;
     public String author;
 
+    public ArtigoModel() {
+    }
+
     public ArtigoModel(String title, String author) {
         this.title = title;
         this.author = author;

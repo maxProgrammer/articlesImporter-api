@@ -2,7 +2,7 @@ package com.maxprogrammer.articles.articleimporter.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
+import java.util.ArrayList;
 
 
 public class ArtigosDto {
@@ -17,17 +17,18 @@ public class ArtigosDto {
     @JsonProperty("total_pages")
     public int totalPages;
 
-    public List<DetalheArtigoDto> data;
+    public ArrayList<DetalheArtigoDto> data;
 
     @Deprecated
     public ArtigosDto() {
     }
 
-    public ArtigosDto(int page, int perPage, int total, int totalPages, List<DetalheArtigoDto> data) {
+    public ArtigosDto(int page, int perPage, int total, int totalPages, ArrayList<DetalheArtigoDto> data) {
         this.page = page;
         this.perPage = perPage;
         this.total = total;
         this.totalPages = totalPages;
         this.data = data;
     }
+
 }

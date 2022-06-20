@@ -1,6 +1,5 @@
 package com.maxprogrammer.articles.articleimporter.controller;
 
-import com.maxprogrammer.articles.articleimporter.dtos.ArtigosDto;
 import com.maxprogrammer.articles.articleimporter.services.ArtigoService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,9 @@ public class ArtigoController {
 
     @GetMapping(value = "/")
     @Operation(summary = "Return all articles")
-    public ArtigosDto retornaTodosArtigos() {
+    public void importerArticles() {
 
-        return artigoService.listallArticles();
+        artigoService.importerArticles();
     }
 
 }
