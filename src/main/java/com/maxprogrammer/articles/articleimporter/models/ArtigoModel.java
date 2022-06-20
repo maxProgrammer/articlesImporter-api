@@ -1,4 +1,4 @@
-package com.maxprogrammer.articles.articleimporter;
+package com.maxprogrammer.articles.articleimporter.models;
 
 import lombok.Data;
 
