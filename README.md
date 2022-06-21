@@ -26,16 +26,17 @@
 + Java 11
 + Spring Boot
 + Maven
-+ H2 Database
++ PostgreSQL
 
 
 ## 🌱 Starters
 + Spring WEB
 + Validation
-+ H2 Database
++ PostgreQL Drivr
 + Spring Data JPA
 + Lombok
 + Swagger UI
++ DevTools
 
 ## 🪖 Patterns
 + MVC
