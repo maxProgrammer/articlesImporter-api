@@ -5,6 +5,8 @@ import com.maxprogrammer.articles.articleimporter.dtos.ArticleDto;
 import com.maxprogrammer.articles.articleimporter.models.ArticleModel;
 import com.maxprogrammer.articles.articleimporter.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -42,5 +44,9 @@ public class ArticleService {
             ArticleModel novoArtigo = detalhe.newArticleModelByStoryTitle();
             articleRepository.save(novoArtigo);
         }
+    }
+
+    public Page<ArticleModel> listAllArticlesOnDataBase(Pageable pageable){
+        return articleRepository.findAll(pageable);
     }
 }
