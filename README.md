@@ -4,7 +4,7 @@
 ### REST API responsible to consume an external API and save each article  if it has not the title or the story_title empty
 
 <h1 align="center">
-  <img alt="Readme" title="Readme" src="https://user-images.githubusercontent.com/87916631/174625938-aa11deee-b282-47ee-a9e2-eb4c02331752.JPG"/>
+  <img alt="Readme" title="Readme" src="https://user-images.githubusercontent.com/87916631/174701540-d5130a1c-8148-4e09-a826-e35222f613e5.JPG"/>
 </h1>
 
 ## 🔘 Fields of ArtigoModel are:
