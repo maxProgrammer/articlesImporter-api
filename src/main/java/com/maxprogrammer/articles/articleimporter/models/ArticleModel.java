@@ -16,7 +16,7 @@ public class ArticleModel {
     private long id;
 
     private String title;
-    public String author;
+    private String author;
 
     public ArticleModel() {
     }

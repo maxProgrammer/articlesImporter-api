@@ -6,10 +6,7 @@ import com.maxprogrammer.articles.articleimporter.models.ArticleModel;
 import com.maxprogrammer.articles.articleimporter.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
-
-import javax.validation.Valid;
 
 @Service
 public class ArticleService {
@@ -26,28 +23,24 @@ public class ArticleService {
 
         for (ArticleDetailDto detalhe : allArticles.data) {
             ArticleModel possibleArticleModel = detalhe.newArticleModelByTitle();
+            ArticleModel possibleArticleModelByStoryTitle = detalhe.newArticleModelByStoryTitle();
+
             ArticleModel possibleInDataBase = articleRepository.findArticleModelByTitle(possibleArticleModel.getTitle());
-            if (possibleInDataBase == null) {
-                controlStatementFlowToAddArticleModel(detalhe);
+            ArticleModel possibleInDataBaseBYStoryTitle = articleRepository.findArticleModelByTitle(possibleArticleModelByStoryTitle.getTitle());
+
+            if (possibleInDataBase == null && possibleInDataBaseBYStoryTitle == null) {
+                save(detalhe);
             }
         }
     }
 
-    public void salveArticlesByTitle(ArticleDetailDto articleDetailDto) {
-        ArticleModel novoArtigo = articleDetailDto.newArticleModelByTitle();
-
-        articleRepository.save(novoArtigo);    }
-
-    public void salveArticlesByStoryTitle(ArticleDetailDto articleDetailDto) {
-        ArticleModel novoArtigo = articleDetailDto.newArticleModelByStoryTitle();
-        articleRepository.save(novoArtigo);
-    }
-
-    public void controlStatementFlowToAddArticleModel(ArticleDetailDto detalhe) {
+    public void save(ArticleDetailDto detalhe) {
         if (detalhe.getTitle() != null && detalhe.getTitle() != "") {
-            salveArticlesByTitle(detalhe);
+            ArticleModel novoArtigo = detalhe.newArticleModelByTitle();
+            articleRepository.save(novoArtigo);
         } else if (detalhe.getStoryTitle() != null && detalhe.getStoryTitle() != "") {
-            salveArticlesByStoryTitle(detalhe);
+            ArticleModel novoArtigo = detalhe.newArticleModelByStoryTitle();
+            articleRepository.save(novoArtigo);
         }
     }
 }
