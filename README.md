@@ -9,8 +9,8 @@
 
 ## 🔘 Fields of ArtigoModel are:
 + id
++ author
 + title
-+ story_title
 
 ## 📔 Features
 + consult an external REST API
